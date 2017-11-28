@@ -1,0 +1,67 @@
+Model
+
+Step 1: Plot the histogram for the given set of density for POI (Count values for POI)
+
+Step 2 :Understanding the skewness in the data
+
+			If Median=Mean = normal distibuted
+			If Median < Mean = Left Skewed
+			If Median > Mean = Right Skewed 
+			
+The skeweness also indicates the effet of outliers on the given density
+
+Step 3 :Find confidence interval (density value) for the values of 90%,80%,70%,60%,50%,40%,30%,20%,15,10%
+
+Step 4: 
+
+   Case 1: For normal distribution find the critical values using area under curve around mean
+   
+   Case 2 : For skewed distribution find the critical values using 
+				1) t-value based confidence interval if the data set size is large
+				2) Wilcoxon signed-rank which concentrates around median
+				3) Bootstrap method
+   
+Step 5: Apply hash map function to map the POI to specific buckets leabelled from -10 to 10 as below
+
+	h(-10) = x < mean and x ≤ lower bound critical value for 90%
+	h(-9)  = x < mean and x > lower bound critical value for 90% and x ≤ lower bound critial value for 80%
+	h(-8)  = x < mean and x > lower bound critical value for 80% and x ≤ lower bound critial value for 70%
+	h(-7)  = x < mean and x > lower bound critical value for 70% and x ≤ lower bound critial value for 60%
+	h(-6)  = x < mean and x > lower bound critical value for 60% and x ≤ lower bound critial value for 50%
+	h(-5)  = x < mean and x > lower bound critical value for 50% and x ≤ lower bound critial value for 40%
+	h(-4)  = x < mean and x > lower bound critical value for 40% and x ≤ lower bound critial value for 30%
+	h(-3)  = x < mean and x > lower bound critical value for 30% and x ≤ lower bound critial value for 20%
+	h(-2)  = x < mean and x > lower bound critical value for 20% and x ≤ lower bound critial value for 15%
+	h(-1)  = x < mean and x > lower bound critical value for 15% and x ≤ lower bound critial value for 10%
+	h(0)  = x ≤ mean and x > lower bound critical value for 10% 
+	h(1)  = x > mean and x ≤ upper bound critical value for 10% 
+	h(2)  = x > mean and x > upper bound critical value for 10% and x ≤ upper bound critial value for 20%
+	h(3)  = x > mean and x > upper bound critical value for 20% and x ≤ upper bound critial value for 30%
+	h(4)  = x > mean and x > upper bound critical value for 30% and x ≤ upper bound critial value for 40%
+	h(5)  = x > mean and x > upper bound critical value for 40% and x ≤ upper bound critial value for 50%
+	h(6)  = x > mean and x > upper bound critical value for 50% and x ≤ upper bound critial value for 60%
+	h(7)  = x > mean and x > upper bound critical value for 60% and x ≤ upper bound critial value for 70%
+	h(8)  = x > mean and x > upper bound critical value for 70% and x ≤ upper bound critial value for 80%
+	h(9)  = x > mean and x > upper bound critical value for 80% and x ≤ upper bound critial value for 90%
+	h(10) = x > mean and x > upper bound critical value for 90%
+	
+The POI assigned with label 10 naturally belong to the higher density and density decreases as we proceed the labels to -10
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

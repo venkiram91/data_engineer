@@ -1,0 +1,44 @@
+Bonus:
+
+Case 1: Understanding how POI density determines the success of a advertisement promotion
+
+Null Hypotheses: The POI density does not influences the reach of advertisement promotion
+
+Assumptions:
+
+1) Assuming no other factors influence the promotion (say th product is newly launched )
+2) Assuming the desnity of the POI remains relatively constant
+
+Testing
+1) Select two POI of verying density and launch the same adertisement promtoion
+2) Collect the sales data of the product and check the variability of the data through t-test
+3) Repeat the test for similar samples
+
+Conclusion:
+If the variation is significant enough then the null hypotheses is rejected reflecting the fact that POI density infuences
+the success of a promotion
+
+Case 2: Understanding advertisement success from POI density
+
+Null Hypotheses: The advertisement does not influences the density of POI
+
+Assumptions:
+
+1)The POI density remains relatively constant
+2)The POI under consideration has no other influence (say new market)
+
+Testing:
+1) Select two POI of relatively same density prior to advertisement
+2) Launch the advertisement in one test set and keep the other parameters constant at both the test test
+3)The A/B testing would give the idea on the effect of advertisement on the POI
+4)Repeat the experiment on similar sample
+
+Conclusion:
+If the variation is significant enough,then the null hypotheses is rejected
+
+
+
+
+
+
+
