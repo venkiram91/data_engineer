@@ -33,8 +33,6 @@ def main():
 	distance_calc.registerTempTable("table1")
 	#Cluster the data  based on the column to group to reduce shuffling
 	distance_calc = sqlContext.sql("SELECT * FROM table1 CLUSTER BY id")
-	#Data frame is cached as it is expected to be repeatedlu accessed
-	distance_calc.cache()
 	#Minimum distance is calculated
 	poi_min_distance = distance_calc.groupBy('id').agg(min('distance_in_km').alias('distance_in_km'))
 	#assigning the labels

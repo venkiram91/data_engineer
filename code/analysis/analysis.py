@@ -19,9 +19,10 @@ def main():
 	#read data into data frame
 	df1= sqlContext.read.format('com.databricks.spark.csv').options(header='false').load(inputs,schema = customSchema)
 	#Register data frame into table
-	df1.registerTempTable("table1")
+	df1.registerTempTable("temp_table")
 	#Cluster the data based on the column to group to reduce shuffling
-	df1 = sqlContext.sql("SELECT * FROM table1 CLUSTER BY poi_id")
+	df1 = sqlContext.sql("SELECT * FROM temp_table CLUSTER BY poi_id")
+	df1.registerTempTable("table1")
 	#Calculating POI average
 	df_avg = sqlContext.sql("SELECT poi_id,avg(distance_in_km) as avg_distane_in_km,stddev(distance_in_km) FROM table1 GROUP BY poi_id")
 	df_avg.coalesce( 1 ).write.format('com.databricks.spark.csv').save(output+'/average_stddeviation',header = 'true')
