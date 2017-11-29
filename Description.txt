@@ -1,0 +1,36 @@
+1) All the relevant codes are added inside the folder named code
+
+2)The folder model consist of three files 
+	a)Model.txt - mathematical model for scaling -10 to 10 
+	b)bonus.txt - Hypotheses proposed and substantiated
+	c)Bonus.ppt - A presentation on the Hypotheses proposed
+	
+3)The sub-folder 'anaysis','cleanup','label' consist of the respective spark job code and their output
+
+Result:
+
+POI 1 and POI 2 ,both had the same latitude and longtitide (Duplicate POI)
+
+The results obtained for the analysis are as below:
+
+	Average Distance in Kilometer
+		POI 1 - 15414.3459
+		POI 3 - 28577.3961
+		POI 4 - 29425.6260
+	Standard Deviation
+		POI 1 - 13136.4212
+		POI 3 - 21350.1242
+		POI 4 - 104098.6235
+	Density (count)
+		POI 1 -	8747
+		POI 3 -	8802
+		POI 4 -	424
+	circle Area (Kilometer square)
+		POI 1 - 47983172286.8286
+		POI 3 -	1225614795631.86
+		POI 4 - 1518551565574.68
+
+Note 1: The data has been clustered based on the join column to reduce shuffling wherever necessary
+		The data has been broadcasted to reduce movement between nodes wherever necesary
+
+Note 2: I have added 'bonus.ppt' file inside 'Model' folder and will be very happy to come in person and present the thought behing the hypotheses

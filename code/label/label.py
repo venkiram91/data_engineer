@@ -26,10 +26,10 @@ def main():
 	customSchema = StructType([StructField("id", LongType(), False),StructField("timeSet", StringType(), False),StructField("country", StringType(), False),StructField("province", StringType(), False),StructField('city',StringType(), False),StructField('latitude',FloatType(), False),StructField('longtitude',FloatType(), False)])
 	poi_schema=StructType([StructField("poi_id", StringType(), False),StructField('poi_latitude',FloatType(), False),StructField('poi_longtitude',FloatType(), False)])
 	#Reading data into data frame
-	df1= sqlContext.read.format('com.databricks.spark.csv').options(header='false').load(input1,schema = customSchema)
-	df2= sqlContext.read.format('com.databricks.spark.csv').options(header='true').load(input2,schema = poi_schema)
+	df_input1= sqlContext.read.format('com.databricks.spark.csv').options(header='false').load(input1,schema = customSchema)
+	df_input2= sqlContext.read.format('com.databricks.spark.csv').options(header='true').load(input2,schema = poi_schema)
 	#Performing join after Broadcast
-	distance_calc=df1.join(broadcast(df2)).withColumn('distance_in_km',cal_distance(df1.latitude,df1.longtitude,df2.poi_latitude,df2.poi_longtitude))
+	distance_calc=df_input1.join(broadcast(df_input2)).withColumn('distance_in_km',cal_distance(df_input1.latitude,df_input1.longtitude,df_input2.poi_latitude,df_input2.poi_longtitude))
 	distance_calc.registerTempTable("table1")
 	#Cluster the data  based on the column to group to reduce shuffling
 	distance_calc = sqlContext.sql("SELECT * FROM table1 CLUSTER BY id")

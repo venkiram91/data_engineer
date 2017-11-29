@@ -8,7 +8,7 @@ Step 2 :Understanding the skewness in the data
 			If Median < Mean = Left Skewed
 			If Median > Mean = Right Skewed 
 			
-The skeweness also indicates the effet of outliers on the given density
+The skeweness also indicates the presence and effect of outliers on the given density
 
 Step 3 :Find confidence interval (density value) for the values of 90%,80%,70%,60%,50%,40%,30%,20%,15,10%
 
