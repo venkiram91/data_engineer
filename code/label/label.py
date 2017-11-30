@@ -14,7 +14,7 @@ def cal_distance(lat1,long1,lat2,long2):
 
 def main():
 	#Setting up spark configuration
-	conf = SparkConf().setAppName('cleanup')
+	conf = SparkConf().setAppName('label')
 	sc = SparkContext(conf=conf)
 	assert sc.version >= '1.5.1'
 	sqlContext = HiveContext(sc)

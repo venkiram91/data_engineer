@@ -7,7 +7,7 @@ import sys, operator,os
 
 def main():
 	#Setting up spark configuration
-	conf = SparkConf().setAppName('cleanup')
+	conf = SparkConf().setAppName('analysis')
 	sc = SparkContext(conf=conf)
 	assert sc.version >= '1.5.1'
 	sqlContext = HiveContext(sc)
