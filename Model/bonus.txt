@@ -10,7 +10,7 @@ Assumptions:
 2) Assuming the desnity of the POI remains relatively constant
 
 Testing
-1) Select two POI of verying density and launch the same adertisement promtoion
+1) Select two POI of verying density and launch the same adevrtisement promotion
 2) Collect the sales data of the product and check the variability of the data through t-test
 3) Repeat the test for similar samples
 
